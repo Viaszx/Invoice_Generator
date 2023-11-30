@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+	<script src="pdfmake.min.js"></script>
+    <script src="vfs_fonts.js"></script>
+</head>
+<body>
+    <form id="invoiceForm">
+	<label>Your Name:</label>
+		<!-- Hidden Information -->
+		<fieldset>
+			<legend>
+				<span id="informationToggle" class="expandable-legend">Requisites: ▼</span>
+			</legend>
+			<div id="hiddenInformation" class="hidden-information hidden">
+				<label class="checkbox-label">
+					Address <input type="checkbox" id="homeAddressCheckbox" name="homeAddressCheckbox">
+				</label>
+				<input type="text" id="homeAddress" name="homeAddress" value="Fill in your details">				
+				<label class="checkbox-label">
+					Phone <input type="checkbox" id="phoneCellCheckbox" name="phoneCellCheckbox">
+				</label>
+				<input type="tel" id="phoneCell" name="phoneCell" value="Fill in your details">				
+				<label class="checkbox-label">
+					Paypal <input type="checkbox" id="paypalCheckbox" name="paypalCheckbox">
+				</label>
+				<input type="text" id="paypal" name="paypal" value="">				
+				<label class="checkbox-label">
+					Zelle <input type="checkbox" id="zelleCheckbox" name="zelleCheckbox" checked>
+				</label>
+				<input type="text" id="zelle" name="zelle" value="">
+				<label class="checkbox-label">
+					Venmo <input type="checkbox" id="venmoCheckbox" name="venmoCheckbox">
+				</label>
+				<input type="text" id="venmo" name="venmo">				
+				<label class="checkbox-label">
+					Account Number <input type="checkbox" id="accountNumberCheckbox" name="accountNumberCheckbox" checked>
+				</label>
+				<input type="text" id="accountNumber" name="accountNumber" value="">
+			</div>
+		</fieldset>
+		
+		<fieldset>
+			<legend>
+				<span id="billToToggle" class="expandable-legend">Bill to: ▼</span>
+			</legend>
+			<div id="hiddenBillTo" class="hidden-information hidden">
+				<label for="billToName">Name*</label>
+				<input type="text" id="billToName" name="name" required>
+				<label for="billTocompanyName">Company name</label>
+				<input type="text" id="billTocompanyName" name="companyName">
+				<label for="billToaddress">Address</label>
+				<input type="text" id="billToaddress" name="address">
+				<label for="billTophone">Phone</label>
+				<input type="tel" id="billTophone" name="phone">
+				<label for="billToemail">Email</label>
+				<input type="email" id="billToemail" name="email">
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>
+				<span id="invoiceToggle" class="expandable-legend">Invoice Details: ▼</span>
+			</legend>
+			<div id="hiddenInvoice" class="hidden-information hidden">
+				<label for="invoiceNumber">Invoice #</label>
+				<input type="text" id="invoiceNumber" name="invoiceNumber">
+				<label for="invoiceDate">Invoice Date</label>
+				<input type="date" id="invoiceDate" name="invoiceDate">
+				<label for="PaymentDue">Payment Due</label>
+				<input type="date" id="PaymentDue" name="PaymentDue">
+			</div>
+		</fieldset>
+
+		<fieldset class="items-container">
+			<legend class="Items-legend">Items:</legend>
+			<div class="item item-template">
+				<label for="itemDate">Date*</label>
+				<input type="date" class="itemDate" name="itemDate[]" required>
+				<label for="itemName">Item name*</label>
+				<input type="text" class="itemName" name="itemName[]" required value="Fill in your details">
+				<label for="itemDescription">Description</label>
+				<input type="text" class="itemDescription" name="itemDescription[]">
+				<label for="itemQty">Qty*</label>
+				<input type="number" class="itemQty" name="itemQty[]" step="1" value="1" required>
+				<label for="itemRate">Rate ($)*</label>
+				<input type="number" class="itemRate" name="itemRate[]" step="1" required>
+				<label for="itemDiscount">Discount ($)</label>
+				<input type="number" class="itemDiscount" name="itemDiscount[]" step="1" value="0">
+				<div class="taxable-checkbox">
+					<label for="itemTaxable">Taxable</label>
+					<input type="checkbox" class="itemTaxable" name="itemTaxable[]">
+					</div>
+			</div>
+			<hr class="item-separator"> <!-- Horizontal separator line -->
+			<button type="button" id="addItem">Add item</button>
+		</fieldset>
+
+		<fieldset>
+			<legend>Totals:</legend>
+			<label for="taxInformation">Tax information (%)</label>
+			<input type="number" id="taxInformation" name="taxInformation" min="0" max="100" step="0.1" value="9.5">
+			<label for="subtotal">Subtotal: <span id="subtotalValue">$0.00</span></label>
+			<label for="taxAmount">Tax Amount: <span id="taxAmountValue">$0.00</span></label>
+			<label for="discount">Discount: <span id="discountValue">-$0.00</span></label>
+			<label for="total" class="bold large-font">Total due: <span id="totalValue">$0.00</span></label>
+		</fieldset>
+		
+        <fieldset>
+            <legend>Notes:</legend>
+            <textarea id="notes" name="notes"></textarea>
+        </fieldset>
+
+        <button type="button" id="viewInvoice">View</button>
+        <button type="button" id="downloadInvoice">Download</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

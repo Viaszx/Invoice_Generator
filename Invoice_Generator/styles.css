@@ -1,0 +1,149 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1; /* Adjust the line-height here */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 98%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+output {
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#invoiceForm {
+    margin-bottom: 50px;
+}
+
+#invoiceForm::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.item {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#addItem {
+    float: right;
+}
+
+/* Reduce width of margins */
+input[type="date"],
+input[type="number"] {
+    width: 20%;
+}
+
+#notes {
+    width: 98%;
+    height: 80px; /* Height in pixels or other units */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.large-font {
+    font-size: 18px; /* Font size in pixels */
+}
+
+.taxable-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.taxable-checkbox input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.item-separator {
+    margin: 10px 0;
+    border: none;
+    height: 2px;
+    background-color: #4CAF50;
+}
+
+.item-delete {
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Add styles for showing and hiding */
+.hidden-information.hidden {
+    display: none;
+}
+
+.expandable-legend {
+    cursor: pointer;
+    color: white;
+    background-color: #45a049;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+/* Add the .checkbox-label class to checkbox labels */
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.Items-legend {
+    color: white;
+    background-color: #45a049;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
