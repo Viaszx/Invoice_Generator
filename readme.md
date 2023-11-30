@@ -3,7 +3,7 @@
 A simple web-based invoice generator.
 
 ## User interface
-![web_interface](https://github.com/Viaszx/Mazda-SkyActiv-EngineCoolantTemp/assets/78595419/b7bd1e8c-e04e-418e-86cf-134c86a6c46e)
+![web_interface](https://github.com/Viaszx/Mazda-SkyActiv-EngineCoolantTemp/assets/78595419/603cec75-dff7-4850-93fb-303bf4e81a0c)
 
 ## Functionality
 
@@ -40,5 +40,5 @@ A simple web-based invoice generator.
 - [XAMPP](https://www.apachefriends.org/index.html) or a similar local server.
 
 ## Example of generated PDF
- ![generated PDF](https://github.com/Viaszx/Mazda-SkyActiv-EngineCoolantTemp/assets/78595419/a32d91dc-dcfa-4814-8f17-832258a8ae35)
+![pdf](https://github.com/Viaszx/Mazda-SkyActiv-EngineCoolantTemp/assets/78595419/cbc9f7e0-1808-4dcc-a054-b16029bd3757)
 
