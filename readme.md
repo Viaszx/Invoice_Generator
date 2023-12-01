@@ -9,7 +9,7 @@ A simple web-based invoice generator.
 
 - **Add item:** Add items to your invoice by entering the appropriate information in the user interface.
 
-- **View or Download:** View or download the generated invoice. When you save, the invoice is saved on the server and the unique invoice number will automatically increment.
+- **View or Download:** View or download the generated invoice. When you download, the invoice is saved on the server and the unique invoice number will automatically increment.
 
 - **Tax and Discount:** Performs calculations by taking into account additional parameters such as tax and discount.
 
